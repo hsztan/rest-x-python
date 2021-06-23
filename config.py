@@ -6,7 +6,8 @@ password = getenv("DATABASE_PASS")
 host = getenv("DATABASE_HOST")
 port = getenv("DATABASE_PORT")
 
+
 class Config:
-    SQLALCHEMY_DATABASE_URI = f"postgresql://{user}:{password}@{host}:{port}"
+    SQLALCHEMY_DATABASE_URI = f"postgresql://{user}:{password}@{host}:{port}/{db}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = getenv('SECRET_KEY')

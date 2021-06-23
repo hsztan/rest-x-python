@@ -1,4 +1,4 @@
-from app import db
+from app import db, ma
 from sqlalchemy.sql import func
 
 
@@ -14,3 +14,8 @@ class UserModel(db.Model):
 
     def __repr__(self):
         return f"User: {self.username}"
+
+
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ['id', 'username']
